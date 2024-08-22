@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pixabay.com/api';
+const BASE_URL = 'https://pixabay.com/api/';
 
 export const fetchPhotos = searchedQuery => {
   const urlParams = new URLSearchParams({
@@ -7,6 +7,7 @@ export const fetchPhotos = searchedQuery => {
     image_type: 'photo',
     orientation: 'horizontal',
     safesearch: true,
+    per_page: 12,
   });
 
   return fetch(`${BASE_URL}?${urlParams}`).then(response => {
